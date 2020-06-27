@@ -1,0 +1,175 @@
+body{
+    
+    background-image: url("../Imagenes/escudo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+    font-family: sans-serif;
+    color: #2b542c;
+    font-size: 1.2rem;
+    line-height: 1.6em;
+    margin: 0;
+    
+}
+
+h1{
+    
+    font-size: 2rem;
+    line-height: 1.3em;
+    
+}
+
+p{
+    
+    margin-bottom: 1.6em;
+    
+}
+    
+.container{
+    
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+    
+}  
+    
+.header{
+    
+    background: #333333;
+    color: white;
+    padding: 2rem 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    
+}
+
+.header a{
+    
+    color: green;
+    text-decoration: none;
+    
+}
+
+.logo-nav-container{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.LogoM{
+    
+    letter-spacing: 10px;
+    font-size: 1.4em;
+      
+    
+}
+
+.menu-icon{
+    
+    display: none;
+    
+}
+
+.navegador ul{
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+.navegador ul li{
+    
+    display: inline-block;
+    
+}
+
+.navegador ul li a{
+    
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px
+    
+}
+
+
+.navegador ul li a:hover{
+    
+    background: white
+    
+}
+
+
+.main{
+    
+    padding-top: 12rem;
+    
+}
+
+.footer{
+    
+    background: #f2f2f2;
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 6rem;
+    
+}
+
+@media only screen and (max-width: 767px){
+
+    .menu-icon{
+    
+    display: block;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    
+}
+    
+    .navegador{
+        
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .navegador ul{
+        
+        display: none;
+        
+    }
+    
+    .navegador ul.show{
+        
+        display: block;
+        
+    }
+    
+.navegador ul li{
+    
+    display: block;
+    
+}
+
+.navegador ul li a{
+    
+    display: block;
+    padding: 0.5rem 0;
+    transition: all 0.4s linear;
+    border-radius: 5px
+    
+}
+
+
+.navegador ul li a:hover{
+    
+    background: white
+    
+}
+    
+}
