@@ -1,5 +1,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.sql.DriverManager"%>
+
 
 <!DOCTYPE html>
 
@@ -11,7 +14,9 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link href="Css/EstiloM.css" rel="stylesheet">
+        <link href="Css/EstiloM2.css" rel="stylesheet">
+        
+        <link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         
         <title>Mantenimiento</title>
         
@@ -29,13 +34,15 @@
                 
                 <nav class="navegador">
                     
+                    <br/>
+                    
                     <ul>
                         
-                        <li><a href="Próximamente.jsp">Cursos</a></li>
-                        <li><a href="Próximamente.jsp">Notas</a></li>
-                        <li><a href="Próximamente.jsp">Horario</a></li>
-                        <li><a href="Principal.jsp">Regresar</a></li>
-                        <li><a href="index.jsp">Salir</a></li>
+                        <li><a href="Cuentas.jsp">CUENTAS</a></li>
+                        <li><a href="Próximamente.jsp">CATALOGO</a></li>
+                        <li><a href="Compras.jsp">COMPRAS</a></li>
+                        <li><a href="Horario.jsp">HORARIOS</a></li>
+                        <li><a href="index.jsp">VOLVER</a></li>
                         
                     </ul>
                    
@@ -45,51 +52,90 @@
             
         </header>
         
-        <main class="main">
+         <br/><br/>
+         <br/><br/>
+         <br/>
+        
+         <%
             
-            <center>
+            Connection con;
+            String url="jdbc:mysql://localhost/pa";
+            String Driver="com.mysql.jdbc.Driver";
+            String user="root";
+            String clave="";
+            Class.forName(Driver);
+            con=DriverManager.getConnection(url,user,clave);
             
-            <div class="container">
-                
-                <h1></h1>
-                <a href="Próximamente.jsp"><h2>Cursos</h2></a>
-                <a href="Próximamente.jsp"><img src="cursos.jpg" width="25%"></a>  
-                
-            </div>
+            PreparedStatement ps;
+            ResultSet rs;
+            ps=con.prepareStatement("select * From pedidos");
+            rs=ps.executeQuery();
             
-            <div class="container">
-                
-                <h1></h1>
-                <a href="Próximamente.jsp"><h2>Notas</h2></a>
-                <a href="Próximamente.jsp"><img src="notas.png" width="25%"/></a> 
-                
-            </div>  
-                
-             <div class="container">
-                
-                 <h1></h1>
-                 <a href="Próximamente.jsp"><h2>Horario</h2></a>
-                 <a href="Próximamente.jsp"><img src="horario.jpg" width="25%"></a> 
-                
-            </div> 
-                
-            </center>
+        %>
+        
+     <ceter>     
+        
+        <div class="container">
             
-        </main>
+            <h1>Pedidos</h1>
+            
+            <hr>
+            
+            <table class="table table-bordered">
+                
+                <tr>
+                    
+                    <th class="text-center">idPedido</th>
+                    <th class="text-center">idUsuario</th>
+                    <th class="text-center">Comida</th>
+                    <th class="text-center">Bebida</th>
+                    <th class="text-center">Acción</th>
+                    
+                </tr>
+                
+                <%
+                    
+                    while(rs.next()){
+                  
+               %>
+               
+               <tr>
+                  
+                   <td class="text-center"><%= rs.getInt("idPedido")%></td>
+                   <td class="text-center"><%= rs.getInt("idUsuario")%></td>
+                   <td class="text-center"><%= rs.getString("Comida")%></td>
+                   <td class="text-center"><%= rs.getString("Bebida")%></td>
+                   <td class="text-center">
+                       
+                       <a class="btn btn-warning btn-sm">Editar</a>
+                       
+                       <a></a> 
+                       
+                       <a class="btn btn-warning btn-sm">Eliminar</a>
+                       
+                </td>
+                   
+               </tr>
+               
+               <%}%>
+               
+            </table>
+            
+        </div>
+      
+     </ceter>   
         
         <footer class="footer">
             
             <div class="container">
                 
-                <p> COLEGIO LEONARD EULER </p>
+                <p> TODOS LO DERECHOS RESERVADOS PARA CINEPLANET </p>
                 
             </div>
             
         </footer>
         
         <section>
-            
-            
             
         </section>
         

@@ -12,7 +12,7 @@ public class ConectorBD {
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
-             cn=DriverManager.getConnection("jdbc:mysql://localhost/proyectointegrador","root","");
+             cn=DriverManager.getConnection("jdbc:mysql://localhost/pa","root","");
             System.out.println("Yey!");
         } catch (Exception e){
             

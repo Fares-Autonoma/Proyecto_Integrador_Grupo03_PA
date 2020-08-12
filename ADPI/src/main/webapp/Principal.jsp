@@ -6,10 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>bienvenidos a mi primera página </title>
+        <title>Principal</title>
       
         <link href="Css/bootstrap.min.css" rel="stylesheet">
-        <link href="Css/EstiloP.css" rel="stylesheet">
+        <link href="Css/EstiloP2.css" rel="stylesheet">
         
     </head>
     
@@ -30,7 +30,7 @@
                         
                     </button>
                     
-                    <a class="navbar-brand" href="#"> COLEGIO LEONAR EULER </a>
+                    <a class="navbar-brand" href="#"> CINE PLANET </a>
                     
                 </div>
                 
@@ -38,10 +38,10 @@
                     
                     <ul class="nav navbar-nav">
                         
-                        <li><a href="Mantenimiento.jsp"> Mantenimiento </a></li>
-                        <li><a href="Próximamente.jsp"> Consultas </a></li>
-                        <li><a href="Próximamente.jsp"> Informe </a></li>
-                        <li><a href="index.jsp"> Salir </a></li>
+                        <li><a href="Mantenimiento.jsp"> CATALOGOS </a></li>
+                        <li><a href="Próximamente.jsp"> COMPRAS </a></li>
+                        <li><a href="Próximamente.jsp"> HORARIOS </a></li>
+                        <li><a href="index.jsp"> SALIR </a></li>
                         
                     </ul>
                     
@@ -56,7 +56,25 @@
         
     <center>
         
-        <h1> <strong> ¡Bienvendio Euleriano! </strong> </h1>
+        <br/><br/>
+        
+        <h1> <strong> ¡BIENVENIDO! </strong> </h1>
+        
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        
+        
+        <h2>  <strong> ¡LAS MEJORES PELÍCULAS AQUÍ! </strong> </h2>
         
     </center>
         
