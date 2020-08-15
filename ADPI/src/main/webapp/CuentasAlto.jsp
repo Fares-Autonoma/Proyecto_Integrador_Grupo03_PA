@@ -91,11 +91,11 @@
                    <td class="text-center"><%= rs.getString("Contraseña")%></td>
                    <td class="text-center">
                        
-                       <a class="btn btn-warning btn-sm">Editar</a>
+                       <a href="EditarUsuario.jsp?id=<%= rs.getInt("idCliente")%>" class="btn btn-warning btn-sm">Editar</a>
                        
                        <a></a> 
                        
-                       <a class="btn btn-warning btn-sm">Eliminar</a>
+                       <a href="EliminarUsuario.jsp?id=<%= rs.getInt("idCliente")%>" class="btn btn-warning btn-sm">Eliminar</a>
                        
                    </td>
                    

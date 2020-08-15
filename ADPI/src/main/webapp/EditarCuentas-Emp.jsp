@@ -1,4 +1,3 @@
-
 <%@page import="javafx.scene.control.Alert"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.sql.DriverManager"%>
@@ -18,56 +17,74 @@
     </head>
     
     <body>
+        <%
+            Connection con;
+            String url="jdbc:mysql://localhost:3306/pa";
+            String Driver="com.mysql.jdbc.Driver";
+            String user="root";
+            String clave="";
+            Class.forName(Driver);
+            con=DriverManager.getConnection(url,user,clave);
+            PreparedStatement ps;
+            ResultSet rs;
+            int id=Integer.parseInt(request.getParameter("id"));
+            ps=con.prepareStatement("select * from usuario where idUsuario="+id);
+            rs=ps.executeQuery();
+            while(rs.next()){
+        %>
         
      <center>
         
         <div class="container">
             
-            <h1>Agregar nuevo usuario</h1>
+            <h1>Modificar usuario</h1>
             
             <hr>
             
             <form action="" method="post" class="form-control" style=" width: 500px; height: 600px">
+                <br/>
+                
+                ID:
+                <input type="text" readonly="txtid" class="form-control" value="<%=rs.getInt("idUsuario")%>"/>
                 
                 <br/>
                 
-                <div align="left">Nombre:
-                <input type="text" name="txtNomEmp" class="form-control"/>
+                Nombre:
+                <input type="text" name="txtNomEmp" class="form-control" value="<%=rs.getString("Nombre")%>"/>
                 
                 <br/>
                 
                 Apellido:
-                <input type="text" name="txtApellEmp" class="form-control"/>
+                <input type="text" name="txtApellEmp" class="form-control" value="<%=rs.getString("Apellido")%>"/>
                 
                 <br/>
                 
                 Correo:
-                <input type="text" name="txtCorrEmp" class="form-control"/>
+                <input type="text" name="txtCorrEmp" class="form-control" value="<%=rs.getString("Correo")%>"/>
                 
                 <br/>
                 
                 Teléfono:
-                <input type="text" name="txtTelefEmp" class="form-control"/>
+                <input type="text" name="txtTelefEmp" class="form-control" value="<%=rs.getString("Telefono")%>"/>
                 
                 <br/>
                 
                 Contraseña:
-                <input type="text" name="txtContraEmp" class="form-control"/>
+                <input type="text" name="txtContraEmp" class="form-control" value="<%=rs.getString("Contraseña")%>"/>
                 
                 <br/>
                 
                 DNI:
-                <input type="text" name="txtDniEmp" class="form-control"/>
+                <input type="text" name="txtDniEmp" class="form-control" value="<%=rs.getString("DNI")%>"/>
                 
                 <br/>
                 
                 Dirección:
-                <input type="text" name="txtDirecEmp" class="form-control"/>
+                <input type="text" name="txtDirecEmp" class="form-control" value="<%=rs.getString("Direccion")%>"/>
                 
-                </div>
                 <br/>
                 
-                <input type="submit" name="Guardar" class=" btn btn-primary btn-lg"/>
+                <input type="submit" name="Actualizar" class=" btn btn-primary btn-lg"/>
                 
                 <a/> <a/>
                 
@@ -76,10 +93,11 @@
             </form>
             
         </div>
+        <%}%>
         
         <%
             
-            if(request.getParameter("Guardar")!=null){
+            if(request.getParameter("Actualizar")!=null){
             
             String nom=request.getParameter("txtNomEmp");
             String apell=request.getParameter("txtApellEmp");
@@ -90,7 +108,6 @@
             String direcc=request.getParameter("txtDirecEmp");
             
             Connection cnx=null;
-            ResultSet rs=null;
             Statement sta=null;
             
             try{
@@ -99,12 +116,12 @@
             cnx=DriverManager.getConnection("jdbc:mysql://localhost/pa?user=root&password=");
             
             sta=cnx.createStatement();
-            sta.executeUpdate("insert into usuario(Nombre, Apellido, Correo, Telefono, Contraseña, DNI, Direccion)Values('"+nom+"','"+apell+"','"+corr+"',"+telef+",'"+contr+"',"+dni+",'"+direcc+"')");
+            sta.executeUpdate("update usuario set Nombre='"+nom+"', Apellido='"+apell+"', Correo='"+corr+"', Telefono="+telef+", Contraseña='"+contr+"', DNI="+dni+", Direccion='"+direcc+"' where idUsuario="+id);
             request.getRequestDispatcher("Cuentas-Em.jsp").forward(request, response);
             
             }catch(Exception e){
                 
-                out.println("Ocurrio un error al guardar el nuevo usuario");
+                out.println("Ocurrio un error al actualizar el nuevo usuario");
                 
             }
            }  
@@ -115,4 +132,3 @@
     </body>
     
 </html>
-

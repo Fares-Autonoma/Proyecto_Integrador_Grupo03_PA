@@ -37,7 +37,7 @@ public class ControladorUs extends HttpServlet {
                     DatosUs objDatosUs = new DatosUs();
                     int valido = objDatosUs.ValidarUsuario(objUsuarioBean);
                     
-                    UsuarioBean objUsuarioBean1 = objDatosUs.DatosUsuario(objUsuarioBean);
+                    UsuarioBean objUsuario = objDatosUs.DatosUsuario(objUsuarioBean);
 
                     if (valido == 0) {
                         session.invalidate();
@@ -47,7 +47,7 @@ public class ControladorUs extends HttpServlet {
                     
                     } else {
                         
-                        session.setAttribute("SESION", objUsuarioBean1);
+                        session.setAttribute("SESION", objUsuario);
                         getServletContext().getRequestDispatcher("/Mantenimiento.jsp").forward(request, response);
                     }
                     break;

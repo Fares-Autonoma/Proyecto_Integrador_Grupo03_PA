@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class AdministradorControlador extends HttpServlet {
+public class AdministradorServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -56,7 +56,7 @@ public class AdministradorControlador extends HttpServlet {
                 out.println("1");
             }
         } catch (Exception e) {
-            
+           
         }
     }
 

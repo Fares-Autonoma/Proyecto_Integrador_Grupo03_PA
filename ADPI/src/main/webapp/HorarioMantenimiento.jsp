@@ -61,7 +61,7 @@
                     
                     <th class="text-center">idHorario</th>
                     <th class="text-center">Fecha</th>
-                    <th class="text-center">Nombre</th>
+                    <th class="text-center">Hora</th>
                     <th class="text-center">Acción</th>
                     
                 </tr>
@@ -77,7 +77,6 @@
                    <td class="text-center"><%= rs.getInt("idHorario")%></td>
                    <td class="text-center"><%= rs.getString("Fecha")%></td>
                    <td class="text-center"><%= rs.getString("Hora")%></td>
-                   <td class="text-center"><%= rs.getString("Pelicula")%></td>
                    
                   
                    <td class="text-center">

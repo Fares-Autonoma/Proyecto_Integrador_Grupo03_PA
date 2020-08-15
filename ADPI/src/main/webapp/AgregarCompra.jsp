@@ -1,4 +1,3 @@
-
 <%@page import="javafx.scene.control.Alert"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.sql.DriverManager"%>
@@ -7,35 +6,35 @@
 <!DOCTYPE html>
 
 <html>
-    
+
     <head>
-        
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        
+
         <title>JSP Page</title>
-                
+
     </head>
-    
+
     <body>
-      
-        
-        
+
+
+
      <center>
-        
+
         <div class="container">
-            
+
             <h1>Agregar nuevo usuario</h1>
-            
+
             <hr>
-            
+
             <form action="" method="post" class="form-control" style=" width: 450px; height: 450px">
-                
+
                 <br/><br/>
-               
+
                IdPelicula: 
                 <select name="SelPel">
-                
+
                    <%
                    
                      String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -48,27 +47,26 @@
                      while(rs.next()==true){
                          
                        %>
-                       
-                       <option><%=rs.getInt(1)%></option>
-                       
-                       <%
 
+                       <option><%=rs.getInt(1)%></option>
+
+                       <%
                      }
                    
                    %>
-                    
+
                 </select>
-                
+
                 <br/> <br/>
-                
+
                 Costo:
                 <input type="text" name="txtCosto" class="form-control"/>
-                
+
                 <br/><br/>
-                
+
                 IdUsuario:
                 <select name="SelUs">
-                
+
                    <%
                    
                      String driver2 = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -81,23 +79,22 @@
                      while(rs2.next()==true){
                          
                        %>
-                       
-                       <option><%=rs2.getInt(1)%></option>
-                       
-                       <%
 
+                       <option><%=rs2.getInt(1)%></option>
+
+                       <%
                      }
                    
                    %>
-               
+
                  </select>
-                   
-                   
+
+
                 <br/><br/><br/>
-                
+
                 IdPedido:
                 <select name="SelPed">
-                
+
                    <%
                    
                      String driver3 = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -110,22 +107,21 @@
                      while(rs3.next()==true){
                          
                        %>
-                       
-                       <option><%=rs3.getInt(1)%></option>
-                       
-                       <%
 
+                       <option><%=rs3.getInt(1)%></option>
+
+                       <%
                      }
                    
                    %>
-               
+
                  </select>
-                
+
                 <br/><br/><br/>
-                
+
                 IdCliente:
                 <select name="SelCli">
-                
+
                    <%
                    
                      String driver4 = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -138,30 +134,29 @@
                      while(rs4.next()==true){
                          
                        %>
-                       
-                       <option><%=rs4.getInt(1)%></option>
-                       
-                       <%
 
+                       <option><%=rs4.getInt(1)%></option>
+
+                       <%
                      }
                    
                    %>
-               
+
                  </select>
-                
+
                 <br/><br/><br/>
-                
+
                 <input type="submit" name="Guardar" class=" btn btn-primary btn-lg"/>
-                
+
                 <a/> <a/>
-                
+
                 <a href="ComprasAlto.jsp">Regresar</a>
-                
+
             </form>
-            
+
         </div>
-        
-       
+
+
         <%
             
             if(request.getParameter("Guardar")!=null){
@@ -192,10 +187,9 @@
             }
            }  
         %>
-        
-        
+
+
       </center>   
     </body>
-    
-</html>
 
+</html>

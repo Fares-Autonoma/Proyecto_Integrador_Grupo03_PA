@@ -93,11 +93,11 @@
                    <td class="text-center"><%= rs.getString("Direccion")%></td>
                    <td class="text-center">
                        
-                       <a href="Editar.jsp?id=<%= rs.getInt("IdUsuario")%>" class="btn btn-warning btn-sm">Editar</a>
+                       <a href="EditarCuentas-Emp.jsp?id=<%= rs.getInt("IdUsuario")%>" class="btn btn-warning btn-sm">Editar</a>
                        
                        <a></a> 
                        
-                       <a href="Eliminar.jsp?id=<%= rs.getInt("IdUsuario")%>" class="btn btn-warning btn-sm">Eliminar</a>
+                       <a href="EliminarEmpleado.jsp?id=<%= rs.getInt("IdUsuario")%>" class="btn btn-warning btn-sm">Eliminar</a>
                        
                    </td>
                    

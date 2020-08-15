@@ -23,7 +23,7 @@
         
         <div class="container">
             
-            <h1>Agregar nuevo usuario</h1>
+            <h1>Agregar Nuevo Horario</h1>
             
             <hr>
             
@@ -41,31 +41,6 @@
                 
                 <br/><br/>
                  
-                Pelicula: 
-                <select name="SelPel">
-                
-                   <%
-                   
-                     String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-                     String url = "jdbc:mysql://localhost/pa?user=root&password=";
-                     Class.forName("com.mysql.jdbc.Driver");
-                     String sql="select * From Pelicula";
-                     Connection cn=DriverManager.getConnection(url);
-                     PreparedStatement ps=cn.prepareStatement(sql);
-                     ResultSet rs=ps.executeQuery();
-                     while(rs.next()==true){
-                         
-                       %>
-                       
-                       <option><%=rs.getString(2)%></option>
-                       
-                       <%
-
-                     }
-                   
-                   %>
-                    
-                </select>
                 
                 <br/><br/><br/>
                                              
@@ -86,7 +61,6 @@
             
             String Fech=request.getParameter("DateF");
             String Horr=request.getParameter("DateH");
-            String Pel=request.getParameter("SelPel");
                                                 
             Connection cnx=null;
             ResultSet rs2=null;
@@ -98,7 +72,7 @@
             cnx=DriverManager.getConnection("jdbc:mysql://localhost/pa?user=root&password=");
             
             sta=cnx.createStatement();
-            sta.executeUpdate("insert into Horario(Fecha, Hora, Pelicula)Values('"+Fech+"','"+Horr+"','"+Pel+"')");
+            sta.executeUpdate("insert into Horario(Fecha, Hora) Values('"+Fech+"','"+Horr+"')");
             request.getRequestDispatcher("HorarioAlto.jsp").forward(request, response);
             
             }catch(Exception e){

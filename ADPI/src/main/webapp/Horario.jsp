@@ -58,8 +58,7 @@
             <table class="table table-bordered">
                 
                 <tr>
-                    
-                    <th class="text-center">Pelicula</th>
+                    <th class="text-center">ID</th>
                     <th class="text-center">Fecha</th>
                     <th class="text-center">Hora</th>
                                                                                 
@@ -72,8 +71,7 @@
                %>
                
                <tr>
-                  
-                   <td class="text-center"><%= rs.getString("Pelicula")%></td>
+                   <td class="text-center"><%= rs.getInt("idHorario")%></td>
                    <td class="text-center"><%= rs.getString("Fecha")%></td>
                    <td class="text-center"><%= rs.getString("Hora")%></td>
                                                                            

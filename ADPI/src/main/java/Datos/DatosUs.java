@@ -52,6 +52,8 @@ public class DatosUs {
               obj.setCORREO(rs.getString(4));
               obj.setTELEFONO(rs.getString(5));
               obj.setCONTRASEÑA(rs.getString(6));
+              obj.setDNI(rs.getInt(7));
+              obj.setDIRECCION(rs.getString(8));
             }
             pt.close();
             rs.close();

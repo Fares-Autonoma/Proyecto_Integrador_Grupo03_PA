@@ -7,6 +7,8 @@ public class UsuarioBean {
     private String CORREO;
     private String TELEFONO;
     private String CONTRASEÑA;
+    private int DNI;
+    private String DIRECCION;
 
     public int getIDUSUARIO() {
         return IDUSUARIO;
@@ -54,6 +56,22 @@ public class UsuarioBean {
 
     public void setCONTRASEÑA(String CONTRASEÑA) {
         this.CONTRASEÑA = CONTRASEÑA;
+    }
+
+    public int getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(int DNI) {
+        this.DNI = DNI;
+    }
+
+    public String getDIRECCION() {
+        return DIRECCION;
+    }
+
+    public void setDIRECCION(String DIRECCION) {
+        this.DIRECCION = DIRECCION;
     }
     
 }

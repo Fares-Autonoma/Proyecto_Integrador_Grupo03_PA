@@ -87,11 +87,11 @@
                    <td class="text-center"><%= rs.getInt("idPedido")%></td>
                    <td class="text-center">
                        
-                       <a class="btn btn-warning btn-sm">Editar</a>
+                       <a href="EditarCompras.jsp?id=<%= rs.getInt("idTicket")%>" class="btn btn-warning btn-sm">Editar</a>
                        
                        <a></a> 
                        
-                       <a class="btn btn-warning btn-sm">Eliminar</a>
+                       <a href="EliminarCompras.jsp?id=<%= rs.getInt("idTicket")%>" class="btn btn-warning btn-sm">Eliminar</a>
                        
                    </td>
                    

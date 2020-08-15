@@ -10,7 +10,7 @@
         
         <title>JSP Page</title>
         
-        <script src="<%=request.getContextPath()%>/Js/javascript1.js"></script>
+        <script src="<%=request.getContextPath()%>/Js/javascript2.js"></script>
         
     </head>
     

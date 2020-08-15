@@ -48,10 +48,10 @@ public class AdministradorDAO {
               obj.setNOMBRE(rs.getString(2));
               obj.setAPELLIDO(rs.getString(3));
               obj.setCORREO(rs.getString(4));
-              obj.setDIRECCION(rs.getString(6));
-              obj.setTELEFONO(rs.getInt(7));
-              obj.setDNI(rs.getInt(8));
-              obj.setCONTRASEÑA(rs.getString(9));
+              obj.setDIRECCION(rs.getString(5));
+              obj.setTELEFONO(rs.getInt(6));
+              obj.setDNI(rs.getInt(7));
+              obj.setCONTRASEÑA(rs.getString(8));
             }
             pt.close();
             rs.close();

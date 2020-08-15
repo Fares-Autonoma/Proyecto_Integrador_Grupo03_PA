@@ -1,4 +1,4 @@
-function validarAccesoCliente(ruta)
+function validarAccesoAdministrador(ruta)
 {
    var txtusu = document.getElementById('txtusu').value;
    var txtcont = document.getElementById('txtcont').value;
@@ -19,10 +19,11 @@ function validarAccesoCliente(ruta)
         }
         else
         {  
-            document.Login.action=ruta+"/ClienteControlador";
+            document.Login.action=ruta+"/AdministradorServlet";
             document.Login.method="POST";
             document.Login.op.value="1";
             document.Login.submit();
         }
     }
 }
+

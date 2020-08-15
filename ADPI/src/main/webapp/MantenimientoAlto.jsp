@@ -93,9 +93,12 @@
                 <tr>
                     
                     <th class="text-center">idPedido</th>
+                    <th class="text-center">idComida</th>
+                    <th class="text-center">idBebida</th>
                     <th class="text-center">idUsuario</th>
-                    <th class="text-center">Comida</th>
-                    <th class="text-center">Bebida</th>
+                    <th class="text-center">idCliente</th>
+                    <th class="text-center">idHorario</th>
+                    <th class="text-center">Costo</th>
                     <th class="text-center">Acción</th>
                     
                 </tr>
@@ -109,16 +112,19 @@
                <tr>
                   
                    <td class="text-center"><%= rs.getInt("idPedido")%></td>
+                   <td class="text-center"><%= rs.getInt("idComida")%></td>
+                   <td class="text-center"><%= rs.getInt("idBebida")%></td>
                    <td class="text-center"><%= rs.getInt("idUsuario")%></td>
-                   <td class="text-center"><%= rs.getString("Comida")%></td>
-                   <td class="text-center"><%= rs.getString("Bebida")%></td>
+                   <td class="text-center"><%= rs.getInt("idCliente")%></td>
+                   <td class="text-center"><%= rs.getInt("idHorario")%></td>
+                   <td class="text-center"><%= rs.getDouble("Costo")%></td>
                    <td class="text-center">
                        
                        <a class="btn btn-warning btn-sm">Editar</a>
                        
                        <a></a> 
                        
-                       <a class="btn btn-warning btn-sm">Eliminar</a>
+                       <a href="EliminarPedidos.jsp?id=<%= rs.getInt("idPedido")%>" class="btn btn-warning btn-sm">Eliminar</a>
                        
                 </td>
                    
