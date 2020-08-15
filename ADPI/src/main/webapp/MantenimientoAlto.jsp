@@ -38,10 +38,11 @@
                     
                     <ul>
                         
-                        <li><a href="Cuentas.jsp">CUENTAS</a></li>
+                        <li><a href="CuentasAlto.jsp">CUENTAS</a></li>
+                        <li><a href="Cuentas-Em.jsp">CUENTAS-EM</a></li>
                         <li><a href="Próximamente.jsp">CATALOGO</a></li>
-                        <li><a href="Compras.jsp">COMPRAS</a></li>
-                        <li><a href="HorarioMantenimiento.jsp">HORARIOS</a></li>
+                        <li><a href="ComprasAlto.jsp">COMPRAS</a></li>
+                        <li><a href="HorarioAlto.jsp">HORARIOS</a></li>
                         <li><a href="index.jsp">VOLVER</a></li>
                         
                     </ul>
@@ -77,9 +78,15 @@
         
         <div class="container">
             
+            <br/>
+            
             <h1>Pedidos</h1>
             
             <hr>
+            
+            <a class="btn btn-success btn-lg" href="AgregarPedido.jsp">Nuevo registro</a>
+            
+            <br/><br/>
             
             <table class="table table-bordered">
                 

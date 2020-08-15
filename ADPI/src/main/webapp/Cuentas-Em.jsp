@@ -18,7 +18,7 @@
             
             function Volver(){
          
-                    window.document.V.action="<%=request.getContextPath()%>/Mantenimiento.jsp";
+                    window.document.V.action="<%=request.getContextPath()%>/MantenimientoAlto.jsp";
                     window.document.V.method="GET";
                     window.document.V.submit();
                     
@@ -42,7 +42,7 @@
             
             PreparedStatement ps;
             ResultSet rs;
-            ps=con.prepareStatement("select * From cliente");
+            ps=con.prepareStatement("select * From usuario");
             rs=ps.executeQuery();
             
         %>
@@ -55,17 +55,22 @@
             
             <hr>
             
+            <a class="btn btn-success btn-lg" href="AgregarEmpleado.jsp">Nuevo registro</a>
+            
+            <br/><br/>
+            
             <table class="table table-bordered">
                 
                 <tr>
                     
-                    <th class="text-center">IdCliente</th>
+                    <th class="text-center">IdUsuario</th>
                     <th class="text-center">Nombre</th>
-                    <th class="text-center">Apellidos</th>
+                    <th class="text-center">Apellido</th>
                     <th class="text-center">Correo</th>
                     <th class="text-center">Teléfono</th>
-                    <th class="text-center">Usuario</th>
                     <th class="text-center">Contraseña</th>
+                    <th class="text-center">DNI</th>
+                    <th class="text-center">Dirección</th>
                     <th class="text-center">Acciones</th>
                     
                 </tr>
@@ -78,20 +83,21 @@
                
                <tr>
                   
-                   <td class="text-center"><%= rs.getInt("IdCliente")%></td>
+                   <td class="text-center"><%= rs.getInt("IdUsuario")%></td>
                    <td class="text-center"><%= rs.getString("Nombre")%></td>
-                   <td class="text-center"><%= rs.getString("Apellidos")%></td>
-                   <td class="text-center"><%= rs.getString("Email")%></td>
+                   <td class="text-center"><%= rs.getString("Apellido")%></td>
+                   <td class="text-center"><%= rs.getString("Correo")%></td>
                    <td class="text-center"><%= rs.getInt("Telefono")%></td>
-                   <td class="text-center"><%= rs.getString("Usuario")%></td>
                    <td class="text-center"><%= rs.getString("Contraseña")%></td>
+                   <td class="text-center"><%= rs.getInt("DNI")%></td>
+                   <td class="text-center"><%= rs.getString("Direccion")%></td>
                    <td class="text-center">
                        
-                       <a class="btn btn-warning btn-sm">Editar</a>
+                       <a href="Editar.jsp?id=<%= rs.getInt("IdUsuario")%>" class="btn btn-warning btn-sm">Editar</a>
                        
                        <a></a> 
                        
-                       <a class="btn btn-warning btn-sm">Eliminar</a>
+                       <a href="Eliminar.jsp?id=<%= rs.getInt("IdUsuario")%>" class="btn btn-warning btn-sm">Eliminar</a>
                        
                    </td>
                    
@@ -114,4 +120,5 @@
     </body>
     
 </html>
+
 

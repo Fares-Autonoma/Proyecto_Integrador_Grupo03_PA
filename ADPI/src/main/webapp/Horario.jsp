@@ -18,7 +18,7 @@
             
             function Volver(){
          
-                    window.document.V.action="<%=request.getContextPath()%>/Mantenimiento.jsp";
+                    window.document.V.action="<%=request.getContextPath()%>/Principal.jsp";
                     window.document.V.method="GET";
                     window.document.V.submit();
                     
@@ -51,7 +51,7 @@
         
         <div class="container">
             
-            <center><h1>Compras</h1></center>
+            <center><h1>Horarios</h1></center>
             
             <hr>
             
@@ -59,14 +59,10 @@
                 
                 <tr>
                     
-                    <th class="text-center">idHorario</th>
+                    <th class="text-center">Pelicula</th>
+                    <th class="text-center">Fecha</th>
                     <th class="text-center">Hora</th>
-                    <th class="text-center">Día</th>
-                    <th class="text-center">Mes</th>
-                    <th class="text-center">Año</th>
-                    <th class="text-center">Película</th>
-                    <th class="text-center">Acción</th>
-                    
+                                                                                
                 </tr>
                 
                 <%
@@ -77,24 +73,10 @@
                
                <tr>
                   
-                   <td class="text-center"><%= rs.getInt("idHorario")%></td>
-                   <td class="text-center"><%= rs.getInt("Hora")%></td>
-                   <td class="text-center"><%= rs.getString("Dia")%></td>
-                   <td class="text-center"><%= rs.getInt("Mes")%></td>
-                   <td class="text-center"><%= rs.getInt("Año")%></td>
                    <td class="text-center"><%= rs.getString("Pelicula")%></td>
-                   
-                  
-                   <td class="text-center">
-                       
-                       <a class="btn btn-warning btn-sm">Editar</a>
-                       
-                       <a></a> 
-                       
-                       <a class="btn btn-warning btn-sm">Eliminar</a>
-                       
-                   </td>
-                   
+                   <td class="text-center"><%= rs.getString("Fecha")%></td>
+                   <td class="text-center"><%= rs.getString("Hora")%></td>
+                                                                           
                </tr>
                
                <%}%>

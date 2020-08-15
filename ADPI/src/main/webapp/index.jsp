@@ -15,31 +15,22 @@
    
     <script>
             
-            function Entrar(){
-                
-                var Usuario, Clave;
-                Usuario=window.document.Login.txtU.value;
-                Clave=window.document.Login.txtC.value;
-                
-                if (Usuario == ""){
-                    
-                    alert("Falta completar el campo de Usuario")
-                    window.document.Login.txtU.focus();
-                    return;
-                    
-                } else if (Clave == ""){
-                    
-                    alert("No ah registrado la clave")
-                    window.document.Login.txtC.focus();
-                    return;
-                } else {
-                    
-                    window.document.Login.action="<%=request.getContextPath()%>/ControladorUs";
-                    window.document.Login.method="GET";
-                    window.document.Login.submit();
-                    
-                }
-                
+            function  iniciar1(){	 
+                document.EMPRESA.action="<%=request.getContextPath()%>/LoginCliente.jsp";
+                document.EMPRESA.method="POST";
+                document.EMPRESA.submit();
+            }
+            
+            function  iniciar2(){	 
+                document.EMPRESA.action="<%=request.getContextPath()%>/LoginEmpleado.jsp";
+                document.EMPRESA.method="POST";
+                document.EMPRESA.submit();
+            }
+            
+            function  iniciar3(){	 
+                document.EMPRESA.action="<%=request.getContextPath()%>/LoginAdministrador.jsp";
+                document.EMPRESA.method="POST";
+                document.EMPRESA.submit();
             }
             
         </script>
@@ -56,43 +47,22 @@
         
         <div id="Cuadro">
             
-            <form name="Login">
+            <form name="EMPRESA">
                 
-                <p id="Titulo">INICIAR SESIÓN</p>
+            <br><br>
+            <center>
+                <button onclick="iniciar1()" >
+                    <center>  <img  src="Imagenes/icon-estudiante.png" width="100px" height="100px"></center><br> Cliente
+                </button> 
+        
+                <button onclick="iniciar2()" >
+                    <center>  <img  src="Imagenes/trabajador.jpeg" width="100px" height="100px"></center><br> Empleado
+                </button>
                 
-                <hr>
-                
-                <br/><br/>
-                
-                <label id="subtituloI"> NOMBRE DE USUARIO </label>
-                
-                <br/><br/>
-                
-                <input type="txt" class="entrada" name="txtU">
-                
-                <br/><br/>
-                
-                <label id="subtituloII"> CONTRASEÑA </label>
-                
-                <br/><br/>
-                
-                <input type="password" class="entrada" name="txtC">
-                
-                <br/><br/>
-                
-                <input type="button" value="Inicar Sesión" id="boton" onclick="Entrar()">
-               
-                <%
-                   
-                   if(request.getAttribute("mensaje")!=null){
-                   
-                   String msj = (String)request.getAttribute("mensaje");
-                   
-                   out.print(msj);
-                   
-               }
-                   
-               %> 
+                <button onclick="iniciar3()" >
+                    <center>  <img  src="Imagenes/admin.jpeg" width="100px" height="100px"></center><br> Administrador
+                </button>
+            </center> 
                 
             </form>
             

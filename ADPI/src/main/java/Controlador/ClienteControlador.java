@@ -1,20 +1,23 @@
 package Controlador;
 
+import Bean.ClienteBean;
+import Datos.ClienteDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Bean.UsuarioBean;
-import Datos.DatosUs;
 import javax.servlet.http.HttpSession;
 
-public class ControladorUs extends HttpServlet {
+/**
+ *
+ * @author DAN
+ */
+public class ClienteControlador extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         HttpSession session;
         session = request.getSession();
         response.setContentType("text/html;charset=UTF-8");
@@ -28,27 +31,27 @@ public class ControladorUs extends HttpServlet {
                     session = request.getSession();       
                     String mensaje = "";
                    
-                    String usuario = new String(request.getParameter("txtU").getBytes("ISO-8859-1"), "UTF-8");
-                    String contraseña = new String(request.getParameter("txtC").getBytes("ISO-8859-1"), "UTF-8");
+                    String usuario = new String(request.getParameter("txtusu").getBytes("ISO-8859-1"), "UTF-8");
+                    String contraseña = new String(request.getParameter("txtcont").getBytes("ISO-8859-1"), "UTF-8");
                 
-                    UsuarioBean objUsuarioBean = new UsuarioBean();
-                    objUsuarioBean.setCORREO(usuario);
-                    objUsuarioBean.setCONTRASEÑA(contraseña);
-                    DatosUs objDatosUs = new DatosUs();
-                    int valido = objDatosUs.ValidarUsuario(objUsuarioBean);
+                    ClienteBean objClienteBean = new ClienteBean();
+                    objClienteBean.setUSUARIO(usuario);
+                    objClienteBean.setCONTRASEÑA(contraseña);
+                    ClienteDAO objClienteDAO = new ClienteDAO();
+                    int valido = objClienteDAO.ValidarCliente(objClienteBean);
                     
-                    UsuarioBean objUsuarioBean1 = objDatosUs.DatosUsuario(objUsuarioBean);
+                    ClienteBean objCliente = objClienteDAO.DatosCliente(objClienteBean);
 
                     if (valido == 0) {
                         session.invalidate();
                         mensaje = "Las credenciales no son correctas.";
                         request.setAttribute("mensaje", mensaje);
-                        getServletContext().getRequestDispatcher("/LoginEmpleado.jsp").forward(request, response);
+                        getServletContext().getRequestDispatcher("/LoginCliente.jsp").forward(request, response);
                     
                     } else {
                         
-                        session.setAttribute("SESION", objUsuarioBean1);
-                        getServletContext().getRequestDispatcher("/Mantenimiento.jsp").forward(request, response);
+                        session.setAttribute("SESION", objCliente);
+                        getServletContext().getRequestDispatcher("/Principal.jsp").forward(request, response);
                     }
                     break;
                 }
@@ -61,20 +64,43 @@ public class ControladorUs extends HttpServlet {
         }
     }
 
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }
+    }// </editor-fold>
+
 }

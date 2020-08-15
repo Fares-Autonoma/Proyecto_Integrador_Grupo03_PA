@@ -40,7 +40,7 @@
                         
                         <li><a href="Mantenimiento.jsp"> CATALOGOS </a></li>
                         <li><a href="Próximamente.jsp"> COMPRAS </a></li>
-                        <li><a href="Próximamente.jsp"> HORARIOS </a></li>
+                        <li><a href="Horario.jsp"> HORARIOS </a></li>
                         <li><a href="index.jsp"> SALIR </a></li>
                         
                     </ul>

@@ -18,7 +18,7 @@
             
             function Volver(){
          
-                    window.document.V.action="<%=request.getContextPath()%>/Mantenimiento.jsp";
+                    window.document.V.action="<%=request.getContextPath()%>/MantenimientoAlto.jsp";
                     window.document.V.method="GET";
                     window.document.V.submit();
                     
@@ -42,7 +42,7 @@
             
             PreparedStatement ps;
             ResultSet rs;
-            ps=con.prepareStatement("select * From cliente");
+            ps=con.prepareStatement("select * From horario");
             rs=ps.executeQuery();
             
         %>
@@ -51,22 +51,23 @@
         
         <div class="container">
             
-            <center><h1>Usuarios</h1></center>
+            <center><h1>Horarios</h1></center>
             
             <hr>
+            
+            <a class="btn btn-success btn-lg" href="AgregarHorario.jsp">Nuevo registro</a>
+            
+            <br/><br/>
             
             <table class="table table-bordered">
                 
                 <tr>
                     
-                    <th class="text-center">IdCliente</th>
+                    <th class="text-center">idHorario</th>
+                    <th class="text-center">Fecha</th>
+                    <th class="text-center">Hora</th>
                     <th class="text-center">Nombre</th>
-                    <th class="text-center">Apellidos</th>
-                    <th class="text-center">Correo</th>
-                    <th class="text-center">Teléfono</th>
-                    <th class="text-center">Usuario</th>
-                    <th class="text-center">Contraseña</th>
-                    <th class="text-center">Acciones</th>
+                    <th class="text-center">Acción</th>
                     
                 </tr>
                 
@@ -78,13 +79,12 @@
                
                <tr>
                   
-                   <td class="text-center"><%= rs.getInt("IdCliente")%></td>
-                   <td class="text-center"><%= rs.getString("Nombre")%></td>
-                   <td class="text-center"><%= rs.getString("Apellidos")%></td>
-                   <td class="text-center"><%= rs.getString("Email")%></td>
-                   <td class="text-center"><%= rs.getInt("Telefono")%></td>
-                   <td class="text-center"><%= rs.getString("Usuario")%></td>
-                   <td class="text-center"><%= rs.getString("Contraseña")%></td>
+                   <td class="text-center"><%= rs.getInt("idHorario")%></td>
+                   <td class="text-center"><%= rs.getString("Fecha")%></td>
+                   <td class="text-center"><%= rs.getString("Hora")%></td>
+                   <td class="text-center"><%= rs.getString("Pelicula")%></td>
+                   
+                  
                    <td class="text-center">
                        
                        <a class="btn btn-warning btn-sm">Editar</a>
@@ -114,4 +114,5 @@
     </body>
     
 </html>
+
 

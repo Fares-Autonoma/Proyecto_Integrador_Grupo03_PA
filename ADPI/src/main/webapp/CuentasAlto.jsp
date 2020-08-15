@@ -18,7 +18,7 @@
             
             function Volver(){
          
-                    window.document.V.action="<%=request.getContextPath()%>/Mantenimiento.jsp";
+                    window.document.V.action="<%=request.getContextPath()%>/MantenimientoAlto.jsp";
                     window.document.V.method="GET";
                     window.document.V.submit();
                     
@@ -54,6 +54,10 @@
             <center><h1>Usuarios</h1></center>
             
             <hr>
+            
+            <a class="btn btn-success btn-lg" href="AgregarUsuario.jsp">Nuevo registro</a>
+            
+            <br/><br/>
             
             <table class="table table-bordered">
                 

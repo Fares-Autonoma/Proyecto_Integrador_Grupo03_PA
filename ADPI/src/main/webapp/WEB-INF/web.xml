@@ -4,9 +4,33 @@
         <servlet-name>ControladorUs</servlet-name>
         <servlet-class>Controlador.ControladorUs</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ClienteControlador</servlet-name>
+        <servlet-class>Controlador.ClienteControlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdministradorControlador</servlet-name>
+        <servlet-class>Controlador.AdministradorControlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GuardarEmp</servlet-name>
+        <servlet-class>Controlador.GuardarEmp</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorUs</servlet-name>
         <url-pattern>/ControladorUs</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClienteControlador</servlet-name>
+        <url-pattern>/ClienteControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdministradorControlador</servlet-name>
+        <url-pattern>/AdministradorControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GuardarEmp</servlet-name>
+        <url-pattern>/GuardarEmp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
